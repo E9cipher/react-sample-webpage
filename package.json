@@ -1,0 +1,23 @@
+{
+  "name": "react-sample-webpage",
+  "version": "1.0.0",
+  "description": "React simple project",
+  "homepage": "https://github.com/E9Cipher/react-sample-webpage#readme",
+  "bugs": {
+    "url": "https://github.com/E9Cipher/react-sample-webpage/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/E9Cipher/react-sample-webpage.git"
+  },
+  "license": "ISC",
+  "author": "E9Cipher",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "create-react-app": "^5.1.0"
+  }
+}
