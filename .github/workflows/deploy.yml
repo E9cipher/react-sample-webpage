@@ -19,11 +19,11 @@ jobs:
 
       - name: Install deps
         run: npm install
-        working-directory: ./banana_companies
+        working-directory: /banana_companies
 
       - name: Build project
         run: npm run build
-        working-directory: ./banana_companies
+        working-directory: /banana_companies
 
       - name: Deploy to GitHub Pages repo
         run: |
