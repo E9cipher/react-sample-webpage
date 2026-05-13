@@ -19,11 +19,9 @@ jobs:
 
       - name: Install deps
         run: npm install
-        working-directory: /banana-companies
 
       - name: Build project
         run: npm run build
-        working-directory: /banana-companies
 
       - name: Deploy to GitHub Pages repo
         run: |
@@ -33,7 +31,7 @@ jobs:
           git clone https://x-access-token:${{ secrets.GH_PAGES_DEPLOY }}@github.com/e9cipher/e9cipher.github.io.git output
 
           rm -rf output/*
-          cp -r YOUR_FOLDER/build/* output/
+          cp -r ./build/* output/
 
           cd output
           git add .
