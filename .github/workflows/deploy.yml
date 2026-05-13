@@ -19,9 +19,11 @@ jobs:
 
       - name: Install deps
         run: npm install
+        working-directory: ./YOUR_FOLDER
 
       - name: Build project
         run: npm run build
+        working-directory: ./YOUR_FOLDER
 
       - name: Deploy to GitHub Pages repo
         run: |
@@ -31,9 +33,9 @@ jobs:
           git clone https://x-access-token:${{ secrets.GH_PAGES_DEPLOY }}@github.com/e9cipher/e9cipher.github.io.git output
 
           rm -rf output/*
-          cp -r build/* output/
+          cp -r YOUR_FOLDER/build/* output/
 
           cd output
           git add .
-          git commit -m "Deploy from React app"
+          git commit -m "Deploy from React app" || echo "No changes"
           git push
