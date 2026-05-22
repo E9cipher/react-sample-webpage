@@ -1,4 +1,7 @@
+# General - MISC
 token.txt
+*.code-workspace
+*.map
 # Logs
 logs
 *.log
