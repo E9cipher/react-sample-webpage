@@ -40,7 +40,7 @@ body header nav.navbar ul {
 body header nav.navbar ul li {
   list-style-type: none;
   background-color: lightseagreen;
-  padding: 10px;
+  transition: 0.3s ease-out all;
   cursor: pointer;
 }
 body header nav.navbar ul li:hover {
@@ -49,10 +49,16 @@ body header nav.navbar ul li:hover {
   min-width: -moz-fit-content;
   min-width: fit-content;
 }
-body header nav.navbar ul li a {
+body header nav.navbar ul li:hover a {
+  text-decoration: underline;
+}
+body header nav.navbar ul li a,
+body header nav.navbar ul li button {
+  display: inline-block;
   text-decoration: none;
   color: black;
   font-size: 18px;
+  padding: 10px;
 }
 
 /* MAIN */

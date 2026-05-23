@@ -4,7 +4,7 @@ import "./Main.css"
  */
 const SectionJSX = ({ data }) => {
     return (
-        <section id={data.id} className="bodysection">
+        <section id={data.id} className="bodysection" style={{ backgroundColor: data.bgcolor }}>
             <div className="pctitle">
                 <h1 className="ptitle">{data.name}</h1>
             </div>

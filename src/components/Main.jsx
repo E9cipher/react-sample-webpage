@@ -1,15 +1,18 @@
 import { faChevronDown, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Main.css";
+// Components
 import Section from './Section';
 import Gotop from "./Gotop";
+// Utils
+import { clearHash } from "../utils/clearHash";
 
 const Header = () => {
     return (
         <nav className="navbar">
             <ul>
-                <li><a href="/"><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></a></li>
-                <li><a href="/">Home</a></li>
+                <li><a href="#top" onClick={clearHash(200)}><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></a></li>
+                <li><a href="#top" onClick={clearHash(200)}>Home</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#whyus">Why choose us?</a></li>
                 <li><a href="#sponsors">Sponsors</a></li>
@@ -43,9 +46,12 @@ const MainContent = ({ data, data_myname, sectData }) => {
                 <Header data={data}></Header>
             </header>
             <main>
+                <div id="top"></div>
                 <Gotop />
                 <MyNameSection data={data_myname}></MyNameSection>
-                <Section data={sectData}></Section>
+                <Section data={sectData[0]}></Section>
+                <Section data={sectData[1]}></Section>
+                <Section data={sectData[2]}></Section>
             </main>
         </>
     );

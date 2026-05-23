@@ -11,10 +11,11 @@ const App = () => {
         name: myName,
         slogan: mySlogan
     }
-    const sectData = {
-        id: "products",
-        name: "Products"
-    }
+    const sectData = [
+        { id: "products", name: "Products", bgcolor: "" },
+        { id: "whyus", name: "Why Choose Us", bgcolor: "#44A08D" },
+        { id: "sponsors", name: "Our Sponsors", bgcolor: "#50C878" }
+    ]
     const [searchParams] = useSearchParams();
     const forcedLogin = searchParams.get("forceLogin");
     // Renders login or main content

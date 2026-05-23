@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Economica:regular,italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -40,19 +41,31 @@ body header {
             li {
                 list-style-type: none;
                 background-color: lightseagreen;
-                padding: 10px;
+                //padding: 10px;
+                // already styled on <a> so the whole li is clickable, not just the text
+                transition: .3s ease-out all;
                 cursor: pointer;
 
                 &:hover {
                     background-color: rgba(12, 235, 197, 0.479);
                     text-decoration: underline;
                     min-width: fit-content;
+
+                    a {
+                        text-decoration: underline;
+                    }
                 }
 
-                a {
+                a,
+                button {
+                    // buton would be for the home links, which contain href="#" 
+                    // and are bad for navigation (eslint says so)
+                    display: inline-block;
                     text-decoration: none;
                     color: black;
                     font-size: 18px;
+                    padding: 10px; // here instead of li
+                    // WORKAROUND: just add a top div, make those navigate there
                 }
             }
         }
