@@ -1,12 +1,12 @@
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import "./Login.css";
+import styles from "./Login.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ContenedorDenegado = () => {
     return (
-        <div className="contenedor-denegado">
-            <p className="p-denegado">
-                <FontAwesomeIcon icon={faTriangleExclamation} className="fw-icon-denegado"></FontAwesomeIcon>
+        <div className={styles.contenedorDenegado}>
+            <p className={styles.pDenegado}>
+                <FontAwesomeIcon icon={faTriangleExclamation} className={styles.fwIconDenegado} />
                 No has iniciado sesión!
             </p>
         </div>

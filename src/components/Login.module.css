@@ -2,80 +2,75 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900);
-/* --------------------------------- */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
+.loginPage {
   background-color: #f2f3f4;
   font-family: "Roboto", sans-serif;
+  min-height: 100vh;
   width: 100%;
-  padding: 10% 10% 10% 0;
-}
-body #root {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
 }
-body #root .loginBar {
+
+.loginBar {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 70%;
+  width: min(70vw, 520px);
   border: 1px solid #010;
 }
-body #root .loginBar .title {
+
+.title {
   margin-bottom: 20px;
   color: #333;
 }
-body #root .loginBar .title .text {
+
+.text {
   font-size: 40px;
   font-weight: 500;
 }
-body #root .loginBar .title .text.title-text {
+
+.titleText {
   font-family: "Outfit", sans-serif;
 }
-body #root .loginBar .title .text.title-text-2 {
+
+.titleText2 {
   font-family: "Rubik", sans-serif;
 }
-body #root .loginBar .title hr {
-  border: 1px solid #ddd;
-  margin-top: 10px;
-  width: 40%;
-}
-body #root .loginBar .container {
+
+.container {
   display: flex;
   flex-direction: column;
 }
 
-/* --------------------------------------- */
-/* SEPARATE STYLES FOR "CONTENEDOR-DENEGADO" */
-/* --------------------------------------- */
-.contenedor-denegado {
-  height: 100%;
+.contenedorDenegado {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #ff6262;
-  /*padding: 10px 5px;*/
   border: 2px solid #bb2929;
   border-radius: 3px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
-.contenedor-denegado .p-denegado {
+
+.pDenegado {
   font-family: "Roboto", sans-serif;
-  font-size: 30px;
+  font-size: 1.5rem;
   color: black;
   display: flex;
   flex-direction: row;
   line-height: 1.5;
   align-items: center;
+  gap: 0.5rem;
 }
-.contenedor-denegado .p-denegado .fw-icon-denegado {
-  font-size: 30px;
+
+.fwIconDenegado {
+  font-size: 1.5rem;
   color: black;
   display: block;
-}/*# sourceMappingURL=Login.css.map */
+}/*# sourceMappingURL=Login.module.css.map */

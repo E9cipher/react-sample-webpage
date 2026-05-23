@@ -1,30 +1,38 @@
 import React from "react";
-import LoginDiv from "./components/Login";
-import { useSearchParams } from "react-router";
+import { data, useSearchParams } from "react-router";
+// import LoginDiv from "./components/Login";
+import MainContent from "./components/Main"
+
 
 const App = () => {
-    const name = 'Enric';
+    const myName = "Banana Companies LTD";
+    const mySlogan = "Eat bananas every day"
+    const data_myname = {
+        name: myName,
+        slogan: mySlogan
+    }
+    const sectData = {
+        id: "products",
+        name: "Products"
+    }
     const [searchParams] = useSearchParams();
     const forcedLogin = searchParams.get("forceLogin");
     // Renders login or main content
     let session;
     if (forcedLogin === "true") {
-        session = true;
+        session = false; // Display login
     } else {
-        session = false;
+        session = true; // Display main content
     }
-    const country = 'Spain';
 
+    // Session is true, display main content
     return (
         <>
             {session === true ?
-                <div>
-                    <h1 className="title">Hello {name}</h1>
-                    <p>Have a good day!</p>
-                    {country && <p>You are from {country}</p>}
-                </div>
+                <MainContent data={data} data_myname={data_myname} sectData={sectData}></MainContent>
                 :
-                <LoginDiv></LoginDiv>
+                // <LoginDiv></LoginDiv>
+                <p>Login Div goes here</p>
             }
         </>
     )

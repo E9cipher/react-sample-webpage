@@ -1,14 +1,14 @@
-import "./Login.css";
+import styles from "./Login.module.css";
 import { useSearchParams } from "react-router-dom";
 import ContenedorDenegado from "./ContenedorDenegado";
 
 const JSX = (
-    <div className="loginBar">
-        <div className="title">
-            <h1 className="text title-text-2">Login</h1>
+    <div className={styles.loginBar}>
+        <div className={styles.title}>
+            <h1 className={`${styles.text} ${styles.titleText2}`}>Login</h1>
             <hr />
         </div>
-        <div className="container"></div>
+        <div className={styles.container}></div>
     </div>
 )
 
@@ -17,10 +17,10 @@ const LoginDiv = () => {
     const isError = searchParams.get("isError"); // string or null
 
     return (
-        <>
-            {isError === "true" && <ContenedorDenegado></ContenedorDenegado>}
+        <div className={styles.loginPage}>
+            {isError === "true" && <ContenedorDenegado />}
             {JSX}
-        </>
+        </div>
     );
 }
 
