@@ -2,6 +2,7 @@ import { faChevronDown, faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Main.css";
 import Section from './Section';
+import Gotop from "./Gotop";
 
 const Header = () => {
     return (
@@ -42,6 +43,7 @@ const MainContent = ({ data, data_myname, sectData }) => {
                 <Header data={data}></Header>
             </header>
             <main>
+                <Gotop />
                 <MyNameSection data={data_myname}></MyNameSection>
                 <Section data={sectData}></Section>
             </main>
