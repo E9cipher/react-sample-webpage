@@ -283,85 +283,103 @@ body main {
 
                 .card {
                     background: $white;
-                    padding: 20px;
-                    border-radius: 5px;
+                    border-radius: 10px;
                     box-shadow: $lightShadow;
-                    display: flex;
-                    align-items: flex-end;
                     position: relative;
-                    min-height: 195px;
+                    min-height: 300px;
                     margin-top: 50px;
-                    transition: .7s ease all;
-                    transform: rotateY(0deg) scale(1);
+                    transition: transform 0.3s ease;
+                    transform-style: preserve-3d;
+                    perspective: 1000px;
+                    overflow: hidden;
+
+                    .card-inner {
+                        position: relative;
+                        width: 100%;
+                        min-height: 100%;
+                        transform-style: preserve-3d;
+                        transition: transform 0.8s ease;
+                    }
 
                     .card-face {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        backface-visibility: hidden;
+                        border-radius: 10px;
+                        overflow: hidden;
+                    }
 
-                        &.card-back {
-                            display: none;
-                            transform: rotateY(180deg);
-                        }
+                    .card-front {
+                        transform: rotateY(0deg);
+                    }
 
-                        img {
-                            vertical-align: top;
-                            border-radius: 7px;
-                            position: absolute;
-                            top: -50px;
-                            width: calc(100% - 40px);
-                            max-height: 165px;
-                            object-fit: cover;
-                            animation: fadeIn 0.5s ease forwards;
-                        }
+                    .card-back {
+                        transform: rotateY(180deg);
+                        background: #2ecc71;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 20px;
+                    }
 
-                        .buttonContainer {
+                    .card-face img {
+                        vertical-align: top;
+                        border-radius: 7px;
+                        position: absolute;
+                        top: -50px;
+                        width: calc(100% - 40px);
+                        max-height: 165px;
+                        object-fit: cover;
+                        animation: fadeIn 0.5s ease forwards;
+                    }
+
+                    .buttonContainer {
+                        width: 100%;
+                        margin-top: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        z-index: 1;
+
+                        .btn-grid {
+                            padding: 10px;
+                            color: #fff;
                             width: 100%;
-                            margin-top: 20px;
-                            display: grid;
-                            grid-gap: 20px;
-                            grid-template-columns: 1fr 1fr;
+                            display: block;
+                            background: $black;
+                            text-align: center;
+                            border-radius: 5px;
+                            transition: .3s ease all;
+                            text-decoration: none;
+                            font-weight: 500;
+                            animation: fadeIn 0.5s ease forwards;
 
-                            .btn-grid {
-                                padding: 10px;
-                                color: #fff;
-                                width: 100%;
-                                display: block;
-                                background: $black;
-                                text-align: center;
-                                border-radius: 5px;
-                                transition: .3s ease all;
-                                text-decoration: none;
-                                font-weight: 500;
-                                animation: fadeIn 0.5s ease forwards;
+                            &.primary {
+                                background: $blue;
 
-                                &.primary {
-                                    background: $blue;
-
-                                    &:hover {
-                                        background: $blueHover;
-                                    }
+                                &:hover {
+                                    background: $blueHover;
                                 }
+                            }
 
-                                &.secondary {
-                                    background: $lightGray;
+                            &.secondary {
+                                background: $lightGray;
 
-                                    &:hover {
-                                        background: $lightGrayHover;
-
-                                    }
+                                &:hover {
+                                    background: $lightGrayHover;
                                 }
                             }
                         }
-
                     }
 
                     &:hover {
-                        transform: rotateY(180deg) scale(1.05);
+                        transform: translateY(-5px) scale(1.02);
 
-                        .card-face.card-back {
-                            display: block;
-                        }
-
-                        .card-face.card-front {
-                            display: none;
+                        .card-inner {
+                            transform: rotateY(180deg);
                         }
                     }
                 }

@@ -12,6 +12,52 @@ const OriginalCard = () => {
     </div>
 }
 
+const GridCardContent = ({ data_content }) => {
+    const GridCardContentTextDict = {
+        aboutUs: `Banana Companies LTD is a global leader in banana innovation, delivering premium
+        yellow solutions since 1998. We believe in sustainability, quality and potassium.`,
+        ourMission: `To make the world a better place, one banana at a time. We aim to revolutionize
+        fruit logistics while keeping things a-peeling`,
+        products: [`SmartBanana: AI-powered ripeness detection`, `BananaCloud: Storage solutions`,
+            `Banana+: Premium subscription bananas`]
+
+    }
+    const GridCardContentText = {
+        1: {
+            title: "About Us",
+            content: GridCardContentTextDict.aboutUs
+        },
+
+        2: {
+            title: "Our Mission",
+            content: GridCardContentTextDict.ourMission
+        },
+
+        3: {
+            title: "Products",
+            content: GridCardContentTextDict.products
+        }
+    };
+
+    const data = GridCardContentText[data_content];
+
+    if (!data) {
+        return (
+            <p>
+                Invalid data_content provided:
+                {typeof data_content}, {data_content}
+            </p>
+        );
+    }
+
+    return (
+        <>
+            <h1>{data.title}</h1>
+            <p>{data.content}</p>
+        </>
+    );
+}
+
 
 const GridCard = ({ data_index }) => {
     return (
@@ -19,13 +65,10 @@ const GridCard = ({ data_index }) => {
             <div className="card-inner" style={{ width: "100%" }}>
 
                 <div className="card-face card-front">
-                    <img src={images[data_index - 1]} alt="" />
+                    {/* <img src={images[data_index - 1]} alt="" /> */}
 
                     <div className="buttonContainer">
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a href="#" className="btn-grid primary">Buy</a>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                        <a href="#" className="btn-grid secondary">See More</a>
+                        <GridCardContent data_content={Number(data_index)} />
                     </div>
                 </div>
 

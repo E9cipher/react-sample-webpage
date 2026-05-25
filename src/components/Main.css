@@ -236,20 +236,43 @@ body main section.bodysection .pctext .grid {
 }
 body main section.bodysection .pctext .grid .card {
   background: #FEFEFE;
-  padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
-  display: flex;
-  align-items: flex-end;
   position: relative;
-  min-height: 195px;
+  min-height: 300px;
   margin-top: 50px;
-  transition: 0.7s ease all;
-  transform: rotateY(0deg) scale(1);
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
 }
-body main section.bodysection .pctext .grid .card .card-face.card-back {
-  display: none;
+body main section.bodysection .pctext .grid .card .card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+body main section.bodysection .pctext .grid .card .card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+body main section.bodysection .pctext .grid .card .card-front {
+  transform: rotateY(0deg);
+}
+body main section.bodysection .pctext .grid .card .card-back {
   transform: rotateY(180deg);
+  background: #2ecc71;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 body main section.bodysection .pctext .grid .card .card-face img {
   vertical-align: top;
@@ -262,14 +285,15 @@ body main section.bodysection .pctext .grid .card .card-face img {
      object-fit: cover;
   animation: fadeIn 0.5s ease forwards;
 }
-body main section.bodysection .pctext .grid .card .card-face .buttonContainer {
+body main section.bodysection .pctext .grid .card .buttonContainer {
   width: 100%;
   margin-top: 20px;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
 }
-body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid {
+body main section.bodysection .pctext .grid .card .buttonContainer .btn-grid {
   padding: 10px;
   color: #fff;
   width: 100%;
@@ -282,26 +306,23 @@ body main section.bodysection .pctext .grid .card .card-face .buttonContainer .b
   font-weight: 500;
   animation: fadeIn 0.5s ease forwards;
 }
-body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.primary {
+body main section.bodysection .pctext .grid .card .buttonContainer .btn-grid.primary {
   background: #3E60E9;
 }
-body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.primary:hover {
+body main section.bodysection .pctext .grid .card .buttonContainer .btn-grid.primary:hover {
   background: #254BE6;
 }
-body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.secondary {
+body main section.bodysection .pctext .grid .card .buttonContainer .btn-grid.secondary {
   background: #C8C8C8;
 }
-body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.secondary:hover {
+body main section.bodysection .pctext .grid .card .buttonContainer .btn-grid.secondary:hover {
   background: #ACABAB;
 }
 body main section.bodysection .pctext .grid .card:hover {
-  transform: rotateY(180deg) scale(1.05);
+  transform: translateY(-5px) scale(1.02);
 }
-body main section.bodysection .pctext .grid .card:hover .card-face.card-back {
-  display: block;
-}
-body main section.bodysection .pctext .grid .card:hover .card-face.card-front {
-  display: none;
+body main section.bodysection .pctext .grid .card:hover .card-inner {
+  transform: rotateY(180deg);
 }
 body main section.bodysection .pctext .grid {
   /* SPONSORS & DIV.BOX SECTION */
