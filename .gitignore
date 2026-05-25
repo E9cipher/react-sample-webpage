@@ -2,6 +2,8 @@
 token.txt
 *.code-workspace
 *.map
+#ignore images on assets/ until set to properly ones
+/src/assets/img*
 # Logs
 logs
 *.log

@@ -139,6 +139,7 @@ body main section.bodysection {
   padding: 50px;
   text-align: justify;
   min-height: 100vh;
+  width: 100%;
 }
 body main section.bodysection .pctitle {
   display: flex;
@@ -167,6 +168,12 @@ body main section.bodysection .pctext p a:hover {
 }
 body main section.bodysection .pctext p a:visited {
   color: #0000EE;
+}
+body main section.bodysection .pctext.pctext-grid {
+  max-width: 1300px;
+  width: 90%;
+  margin: auto;
+  padding: 50px 0;
 }
 body main section.bodysection .pctext {
   /* DIV.LIST SECTION */
@@ -220,47 +227,92 @@ body main section.bodysection .pctext div.list ul li::before {
 body main section.bodysection .pctext {
   /* DIV.GRID SECTION */
 }
-body main section.bodysection .pctext div.grid {
+body main section.bodysection .pctext .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 1fr);
-  gap: 20px;
   justify-content: center;
-  /* align-items: center; */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 40px 0;
 }
-body main section.bodysection .pctext div.grid div.card {
-  margin-top: 10px;
-  background-color: #f2f3f4;
+body main section.bodysection .pctext .grid .card {
+  background: #FEFEFE;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  min-height: 195px;
+  margin-top: 50px;
+  transition: 0.7s ease all;
+  transform: rotateY(0deg) scale(1);
 }
-body main section.bodysection .pctext div.grid div.card h3 {
-  font-size: 30px;
-  font-family: "Bree Serif", serif;
-  font-weight: 200;
-  text-decoration: underline;
-  text-decoration-color: black;
-  text-decoration-thickness: 3.5px;
-  padding-bottom: 10px;
-  text-align: center;
+body main section.bodysection .pctext .grid .card .card-face.card-back {
+  display: none;
+  transform: rotateY(180deg);
+}
+body main section.bodysection .pctext .grid .card .card-face img {
+  vertical-align: top;
+  border-radius: 7px;
+  position: absolute;
+  top: -50px;
+  width: calc(100% - 40px);
+  max-height: 165px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  animation: fadeIn 0.5s ease forwards;
+}
+body main section.bodysection .pctext .grid .card .card-face .buttonContainer {
   width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
 }
-body main section.bodysection .pctext div.grid div.card p {
-  font-size: 18px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  text-align: justify;
+body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid {
+  padding: 10px;
+  color: #fff;
+  width: 100%;
+  display: block;
+  background: #111111;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.3s ease all;
+  text-decoration: none;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease forwards;
 }
-body main section.bodysection .pctext {
+body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.primary {
+  background: #3E60E9;
+}
+body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.primary:hover {
+  background: #254BE6;
+}
+body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.secondary {
+  background: #C8C8C8;
+}
+body main section.bodysection .pctext .grid .card .card-face .buttonContainer .btn-grid.secondary:hover {
+  background: #ACABAB;
+}
+body main section.bodysection .pctext .grid .card:hover {
+  transform: rotateY(180deg) scale(1.05);
+}
+body main section.bodysection .pctext .grid .card:hover .card-face.card-back {
+  display: block;
+}
+body main section.bodysection .pctext .grid .card:hover .card-face.card-front {
+  display: none;
+}
+body main section.bodysection .pctext .grid {
   /* SPONSORS & DIV.BOX SECTION */
 }
-body main section.bodysection .pctext div.boxcontainer {
+body main section.bodysection .pctext .grid div.boxcontainer {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, 1fr);
   gap: 10px;
 }
-body main section.bodysection .pctext div.boxcontainer .box {
+body main section.bodysection .pctext .grid div.boxcontainer .box {
   background-color: orange;
   padding: 20px;
   border-radius: 10px;
@@ -273,56 +325,56 @@ body main section.bodysection .pctext div.boxcontainer .box {
   height: -moz-fit-content;
   height: fit-content;
 }
-body main section.bodysection .pctext div.boxcontainer .box.no-img {
+body main section.bodysection .pctext .grid div.boxcontainer .box.no-img {
   justify-content: center;
   align-items: center;
 }
-body main section.bodysection .pctext div.boxcontainer .box {
+body main section.bodysection .pctext .grid div.boxcontainer .box {
   /* Positioning also depends in what's first: the img or the text */
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-right {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-right {
   justify-content: flex-start;
   align-items: center;
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-right img {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-right img {
   margin-right: 10px;
   left: 2px;
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-left {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-left {
   justify-content: flex-end;
   align-items: center;
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-left img {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-left img {
   margin-left: 10px;
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-top {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-top {
   flex-direction: column;
   align-items: flex-start;
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-top img {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-top img {
   margin-bottom: 10px;
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-bottom {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-bottom {
   flex-direction: column;
   justify-content: flex-end;
 }
-body main section.bodysection .pctext div.boxcontainer .box.align-bottom img {
+body main section.bodysection .pctext .grid div.boxcontainer .box.align-bottom img {
   margin-top: 10px;
 }
-body main section.bodysection .pctext div.boxcontainer .box img {
+body main section.bodysection .pctext .grid div.boxcontainer .box img {
   width: 100px;
   height: auto;
 }
-body main section.bodysection .pctext div.boxcontainer .box.size1 {
+body main section.bodysection .pctext .grid div.boxcontainer .box.size1 {
   grid-column: span 1;
 }
-body main section.bodysection .pctext div.boxcontainer .box.size2 {
+body main section.bodysection .pctext .grid div.boxcontainer .box.size2 {
   grid-column: span 2;
 }
-body main section.bodysection .pctext div.boxcontainer .box.size3 {
+body main section.bodysection .pctext .grid div.boxcontainer .box.size3 {
   grid-column: span 3;
 }
-body main section.bodysection .pctext div.boxcontainer .box.size4 {
+body main section.bodysection .pctext .grid div.boxcontainer .box.size4 {
   grid-column: span 4;
 }
 
@@ -454,4 +506,14 @@ body footer div.fgrid div.fitem .btn:not(.godown):hover {
 body main section.bodysection .pctext.dflex {
   display: flex;
   justify-content: center;
+}
+
+/* BEGIN KEYFRAMES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=Main.css.map */
