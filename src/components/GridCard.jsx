@@ -91,13 +91,14 @@ const GridCard = ({ data_index }) => {
                 </div>
 
                 <div className="card-face card-back">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
                     <div className="buttonContainer">
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a href="#" className="btn-grid primary">Buy</a>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a href="#" className="btn-grid secondary">See More</a>
                     </div>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
                 </div>
 
             </div>
