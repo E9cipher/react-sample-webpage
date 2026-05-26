@@ -19,7 +19,10 @@ const GridCardContent = ({ data_content }) => {
         ourMission: `To make the world a better place, one banana at a time. We aim to revolutionize
         fruit logistics while keeping things a-peeling`,
         products: [`SmartBanana: AI-powered ripeness detection`, `BananaCloud: Storage solutions`,
-            `Banana+: Premium subscription bananas`]
+            `Banana+: Premium subscription bananas`],
+        stats: [`12M bananas shipped daily`, `More than 42 countries`, `99.99% peel satisfaction rate`, `0 monkey complaints (2023)`],
+        team: [`CEO: John Doe`, `CTO: Marie Doe`, `CSO: Unknown - change`],
+        contact: [`support@bananacompanies.ltd`, `Banana Street 42`, `Join us and eat bananas!`]
 
     }
     const GridCardContentText = {
@@ -36,6 +39,21 @@ const GridCardContent = ({ data_content }) => {
         3: {
             title: "Products",
             content: GridCardContentTextDict.products
+        },
+
+        4: {
+            title: "Stats",
+            content: GridCardContentTextDict.stats
+        },
+
+        5: {
+            title: "Our Team",
+            content: GridCardContentTextDict.team
+        },
+
+        6: {
+            title: "Contacts",
+            content: GridCardContentTextDict.contacts
         }
     };
 
