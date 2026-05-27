@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "React simple project",
-  "homepage": "https://e9cipher.github.io/react-sample-webage",
+  "homepage": "https://e9cipher.github.io/react-sample-webpage",
   "bugs": {
     "url": "https://github.com/E9Cipher/react-sample-webpage/issues"
   },
@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b yakisoba"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
