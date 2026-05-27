@@ -5,7 +5,7 @@ import MainContent from "./components/Main"
 
 
 const App = () => {
-    const myName = "🍜 Yakisboa FC 🍜";
+    const myName = "🍜 Yakisoba FC 🍜";
     const mySlogan = "Lema de l'equip"
     const data_myname = {
         name: myName,
