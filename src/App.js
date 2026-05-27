@@ -5,16 +5,16 @@ import MainContent from "./components/Main"
 
 
 const App = () => {
-    const myName = "Banana Companies LTD";
-    const mySlogan = "Eat bananas every day"
+    const myName = "🍜 Yakisboa FC 🍜";
+    const mySlogan = "Lema de l'equip"
     const data_myname = {
         name: myName,
         slogan: mySlogan
     }
     const sectData = [
-        { id: "products", name: "Products", bgcolor: "" },
-        { id: "whyus", name: "Why Choose Us", bgcolor: "#44A08D" },
-        { id: "sponsors", name: "Our Sponsors", bgcolor: "#50C878" }
+        { id: "products", name: "Qui som", bgcolor: "" },
+        { id: "whyus", name: "El nostre objectiu", bgcolor: "#44A08D" },
+        { id: "sponsors", name: "Inversors", bgcolor: "#50C878" }
     ]
     const [searchParams] = useSearchParams();
     const forcedLogin = searchParams.get("forceLogin");

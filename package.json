@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "React simple project",
-  "homepage": "https://e9cipher.github.io",
+  "homepage": "https://e9cipher.github.io/yakisoba-react",
   "bugs": {
     "url": "https://github.com/E9Cipher/react-sample-webpage/issues"
   },
@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
@@ -29,6 +30,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^6.3.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router": "^7.15.1",

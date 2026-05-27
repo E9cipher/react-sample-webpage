@@ -14,15 +14,12 @@ const OriginalCard = () => {
 
 const GridCardContent = ({ data_content }) => {
     const GridCardContentTextDict = {
-        aboutUs: `Banana Companies LTD is a global leader in banana innovation, delivering premium
-        yellow solutions since 1998. We believe in sustainability, quality and potassium.`,
-        ourMission: `To make the world a better place, one banana at a time. We aim to revolutionize
-        fruit logistics while keeping things a-peeling`,
-        products: [`SmartBanana: AI-powered ripeness detection`, `BananaCloud: Storage solutions`,
-            `Banana+: Premium subscription bananas`],
-        stats: [`12M bananas shipped daily`, `More than 42 countries`, `99.99% peel satisfaction rate`, `0 monkey complaints (2023)`],
-        team: [`CEO: John Doe`, `CTO: Marie Doe`, `CSO: Unknown - change`],
-        contact: [`support@bananacompanies.ltd`, `Banana Street 42`, `Join us and eat bananas!`]
+        aboutUs: `Som el Yakisoba FC`,
+        ourMission: `La nostra missió és aconseguir un reconeixement al nostre club`,
+        products: [`El nostre objectiu`],
+        stats: [`Lorem ipsum`],
+        team: [`Mister: (nom)`, `Inversors: (noms)`, `Integrants: (noms)`],
+        contact: [`support@yakosobafc.com`, `Adreça`, `Uneix-te als nostres inversors!`]
 
     }
     const GridCardContentText = {
