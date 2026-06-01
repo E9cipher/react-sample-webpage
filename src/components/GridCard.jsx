@@ -83,17 +83,17 @@ const GridCard = ({ data_index }) => {
             <div className="card-inner" style={{ width: "100%" }}>
 
                 <div className="card-face card-front">
-                    {/* <img src={images[data_index - 1]} alt="" /> */}
+                    <img src={images[data_index - 1]} alt="" />
 
-                    <div className="buttonContainer">
+                    {/* <div className="buttonContainer">
                         <GridCardContent data_content={Number(data_index)} />
-                    </div>
+                    </div> */}
                 </div>
 
-                <div className="card-face card-back">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-
+                <div className="card-face card-back">                        
                     <div className="buttonContainer">
+                        <GridCardContent data_content={Number(data_index)} />
+
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a href="#" className="btn-grid primary">Buy</a>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
