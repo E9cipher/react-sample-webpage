@@ -1,0 +1,44 @@
+name: Deploy to github pages
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+
+      - name: Deploy to Pages repo
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          git clone https://x-access-token:${{ secrets.GH_PAGES_DEPLOY }}@github.com/e9cipher/e9cipher.github.io.git output
+
+          rm -rf output/*
+
+          cp -r build/* output/
+
+          cd output
+
+          git add .
+
+          git commit -m "Deploy from React app" || echo "No changes"
+
+          git push
