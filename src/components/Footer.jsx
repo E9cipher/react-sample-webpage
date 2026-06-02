@@ -24,24 +24,24 @@ const Footer = () => {
             <div className="fgrid">
                 <div className="fitem">
                     <h3>Contact</h3>
-                    <p>Phone: +34 123 456 789</p>
-                    <p>Email: johndoe@example.com</p>
-                    <p>Address: 1234 Main St, Barcelona, Spain</p>
+                    <p>Phone: +34 019 451 561</p>
+                    <p>Email: support@bananacompanies.ltd</p>
+                    <p>Address: Banana Street 42, Barcelona, Spain</p>
                 </div>
 
                 <div className="fitem">
                     <h3>Follow us</h3>
                     <p>
                         <FontAwesomeIcon icon={faFacebook} />
-                        <a href="https://www.facebook.com/@johndoe" target="_blank" rel="noreferrer">Facebook</a>
+                        <a href="https://www.facebook.com/@bananaltd" target="_blank" rel="noreferrer">Facebook</a>
                     </p>
                     <p>
                         <FontAwesomeIcon icon={faTwitter} />
-                        <a href="https://www.twitter.com/@johndoe" target="_blank" rel="noreferrer">Twitter</a>
+                        <a href="https://www.twitter.com/@bananaltd" target="_blank" rel="noreferrer">Twitter</a>
                     </p>
                     <p>
                         <FontAwesomeIcon icon={faInstagram} />
-                        <a href="https://www.instagram.com/@johndoe" target="_blank" rel="noreferrer">Instagram</a>
+                        <a href="https://www.instagram.com/@bananaltd" target="_blank" rel="noreferrer">Instagram</a>
                     </p>
                 </div>
 
