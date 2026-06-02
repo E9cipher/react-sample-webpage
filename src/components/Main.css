@@ -474,6 +474,8 @@ body footer div.fgrid div.fitem p {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  line-height: 1.5;
+  align-items: center;
 }
 body footer div.fgrid div.fitem p a {
   text-decoration: none;

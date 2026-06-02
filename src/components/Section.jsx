@@ -68,8 +68,6 @@ const gridCardData2 = [
 const Section = ({ sectId, data }) => {
     const cards = sectId === 1 ? gridCardData1 : sectId === 3 ? gridCardData2 : [];
 
-    const Footer = () => (<></>);
-
     return (
         <section id={data.id} className="bodysection" style={{ backgroundColor: data.bgcolor }}>
             <div className="pctitle">
@@ -92,7 +90,6 @@ const Section = ({ sectId, data }) => {
                         ))}
                     </div>
                 )}
-                {sectId === 4 && <Footer />}
             </div>
         </section>
     );

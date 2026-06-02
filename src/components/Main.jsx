@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Main.css";
 // Components
 import Section from './Section';
+import Footer from "./Footer";
 import Gotop from "./Gotop";
 // Utils
 import { clearHash } from "../utils/clearHash";
@@ -48,10 +49,11 @@ const MainContent = ({ data, data_myname, sectData }) => {
             <main>
                 <div id="top"></div>
                 <Gotop />
-                <MyNameSection data={data_myname}></MyNameSection>
-                <Section sectId={1} data={sectData[0]}></Section>
-                <Section sectId={2} data={sectData[1]}></Section>
-                <Section sectId={3} data={sectData[2]}></Section>
+                <MyNameSection data={data_myname} />
+                <Section sectId={1} data={sectData[0]} />
+                <Section sectId={2} data={sectData[1]} />
+                <Section sectId={3} data={sectData[2]} />
+                <Footer />
             </main>
         </>
     );
