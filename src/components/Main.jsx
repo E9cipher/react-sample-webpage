@@ -13,9 +13,9 @@ const Header = () => {
             <ul>
                 <li><a href="#top" onClick={clearHash(200)}><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></a></li>
                 <li><a href="#top" onClick={clearHash(200)}>Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#whyus">Why choose us?</a></li>
-                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#aboutus" onClick={clearHash(200)}>About Us</a></li>
+                <li><a href="#whyus" onClick={clearHash(200)}>Why choose us?</a></li>
+                <li><a href="#products" onClick={clearHash(200)}>Products</a></li>
             </ul>
         </nav>
     )
@@ -29,7 +29,7 @@ const MyNameSection = ({ data }) => {
                 <h1 className="title">{data.name}</h1>
                 <h2 className="subtitle">{data.slogan}</h2>
                 <button className="btn godown">
-                    <a href="#products">
+                    <a href="#aboutus">
                         <FontAwesomeIcon icon={faChevronDown} beatFade></FontAwesomeIcon>
                     </a>
                 </button>
@@ -49,9 +49,9 @@ const MainContent = ({ data, data_myname, sectData }) => {
                 <div id="top"></div>
                 <Gotop />
                 <MyNameSection data={data_myname}></MyNameSection>
-                <Section data={sectData[0]} sectId={1}></Section>
-                <Section data={sectData[1]} sectId={2}></Section>
-                <Section data={sectData[2]} sectId={3}></Section>
+                <Section sectId={1} data={sectData[0]}></Section>
+                <Section sectId={2} data={sectData[1]}></Section>
+                <Section sectId={3} data={sectData[2]}></Section>
             </main>
         </>
     );

@@ -228,7 +228,7 @@ body main {
                 /* border: 4px solid black; */
                 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
-                width: 75%;
+                width: 100%;
 
                 ul {
                     list-style: none;
@@ -259,9 +259,7 @@ body main {
                             }
                         }
 
-                        &::before {
-                            content: "\f00c";
-                            font-family: "Font Awesome 5 Free";
+                        svg {
                             font-weight: 900;
                             color: #10e03d;
                             font-size: 30px;
@@ -320,6 +318,7 @@ body main {
 
                     .card-front {
                         transform: rotateY(0deg);
+                        padding: 0;
                     }
 
                     .card-back {
@@ -335,22 +334,29 @@ body main {
 
                     .card-face img {
                         vertical-align: top;
-                        border-radius: 7px;
-                        position: absolute;
-                        top: -50px;
-                        width: calc(100% - 40px);
+                        width: 100%;
+                        height: auto;
                         max-height: 165px;
-                        object-fit: cover;
+                        animation: fadeIn 0.5s ease forwards;
+                    }
+
+                    .card-face h1 {
+                        font-family: 'Economica';
+                        font-size: 50px;
+                        font-weight: 200;
+                        margin-top: 15px;
+                        width: 100%;
+                        text-align: center;
                         animation: fadeIn 0.5s ease forwards;
                     }
 
                     .buttonContainer {
-                        width: 100%;
                         margin-top: 20px;
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
                         z-index: 1;
+                        width: 100%;
 
                         .btn-grid {
                             padding: 10px;

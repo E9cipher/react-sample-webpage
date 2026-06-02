@@ -12,9 +12,9 @@ const App = () => {
         slogan: mySlogan
     }
     const sectData = [
-        { id: "products", name: "Products", bgcolor: "" },
+        { id: "aboutus", name: "About Us", bgcolor: "" },
         { id: "whyus", name: "Why Choose Us", bgcolor: "#44A08D" },
-        { id: "sponsors", name: "Our Sponsors", bgcolor: "#50C878" }
+        { id: "products", name: "Products", bgcolor: "#50C878" }
     ]
     const [searchParams] = useSearchParams();
     const forcedLogin = searchParams.get("forceLogin");
