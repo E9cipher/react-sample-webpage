@@ -20,9 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: .
 
       - name: Build React app
         run: npm run build
+        working-directory: .
 
       - name: Deploy to Pages repo
         run: |
