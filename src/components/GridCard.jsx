@@ -17,11 +17,11 @@ const GridCardContent = ({ data_content }) => {
         aboutUs: `Banana Companies LTD is a global leader in banana innovation, delivering premium
         yellow solutions since 1998. We believe in sustainability, quality and potassium.`,
         ourMission: `To make the world a better place, one banana at a time. We aim to revolutionize
-        fruit logistics while keeping things a-peeling`,
+        fruit logistics while also investing in AI industries.`,
         products: [`SmartBanana: AI-powered ripeness detection`, `BananaCloud: Storage solutions`,
             `Banana+: Premium subscription bananas`],
-        stats: [`12M bananas shipped daily`, `More than 42 countries`, `99.99% peel satisfaction rate`, `0 monkey complaints (2023)`],
-        team: [`CEO: John Doe`, `CTO: Marie Doe`, `CSO: Unknown - change`],
+        stats: [`12M bananas shipped daily`, `More than 42 countries`, `99.99% customer satisfaction`],
+        team: [`CEO: John Doe`, `CTO: Marie Doe`, `CSO: Charlie McGwyn`],
         contact: [`support@bananacompanies.ltd`, `Banana Street 42`, `Join us and eat bananas!`]
 
     }
@@ -59,6 +59,20 @@ const GridCardContent = ({ data_content }) => {
 
     const data = GridCardContentText[data_content];
 
+    const DataContentP = () => {
+        if (Array.isArray(data.content)) {
+            return (
+                <>
+                    {data.content.map((element, index) => (
+                        <p key={index}>{element}</p>
+                    ))}
+                </>
+            )
+        } else {
+            return <p>{data.content}</p>
+        }
+    }
+
     if (!data) {
         return (
             <p>
@@ -71,7 +85,7 @@ const GridCardContent = ({ data_content }) => {
     return (
         <>
             <h1>{data.title}</h1>
-            <p>{data.content}</p>
+            <DataContentP />
         </>
     );
 }
@@ -90,7 +104,7 @@ const GridCard = ({ data_index }) => {
                     </div> */}
                 </div>
 
-                <div className="card-face card-back">                        
+                <div className="card-face card-back">
                     <div className="buttonContainer">
                         <GridCardContent data_content={Number(data_index)} />
 
