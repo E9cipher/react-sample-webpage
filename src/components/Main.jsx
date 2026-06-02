@@ -49,9 +49,9 @@ const MainContent = ({ data, data_myname, sectData }) => {
                 <div id="top"></div>
                 <Gotop />
                 <MyNameSection data={data_myname}></MyNameSection>
-                <Section data={sectData[0]}></Section>
-                <Section data={sectData[1]}></Section>
-                <Section data={sectData[2]}></Section>
+                <Section data={sectData[0]} sectId={1}></Section>
+                <Section data={sectData[1]} sectId={2}></Section>
+                <Section data={sectData[2]} sectId={3}></Section>
             </main>
         </>
     );
