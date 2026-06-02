@@ -5,7 +5,7 @@ const GridCardContent = ({ data, opts }) => {
     if (!data) {
         return (
             <p>
-                Invalid card data provided.
+                Invalid card data provided: {data}: ({typeof data}), {opts}: ({typeof opts})
             </p>
         );
     }
@@ -40,13 +40,14 @@ const GridCardContent = ({ data, opts }) => {
 };
 
 const GridCard = ({ data, imageIndex }) => {
+    /* eslint-disable-next-line no-unused-vars */
     const imageSrc = images[Number(imageIndex) - 1];
 
     return (
         <div className="card">
             <div className="card-inner" style={{ width: "100%" }}>
                 <div className="card-face card-front">
-                    <img src={imageSrc} alt={data?.title || "card image"} />
+                    {/* <img src={imageSrc} alt={data?.title || "card image"} /> */}
                     <GridCardContent data={data} opts={1} />
                 </div>
 

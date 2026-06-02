@@ -16,9 +16,9 @@ const gridCardData1 = [
     {
         title: "Products",
         content: [
-            `SmartBanana: AI-powered ripeness detection`,
+            `SmartBanana: Banana-powered AI chatbots`,
             `BananaCloud: Storage solutions`,
-            `Banana+: Premium subscription bananas`
+            `Banana+: Premium quality bananas`
         ]
     },
     {
@@ -50,7 +50,15 @@ const gridCardData1 = [
 const gridCardData2 = [
     {
         title: "SmartBanana",
-        content: "AI-powered chatbots and neural networks"
+        content: "Banana-powered AI chatbots and neural networks"
+    },
+    {
+        title: "BananaCloud",
+        content: "Cloud storage solutions with up to 1TB+ for $49.99/year"
+    },
+    {
+        title: "Banana+",
+        content: "Premium, max quality bananas (doesn't mean standard ones aren't good)"
     }
 ];
 
@@ -58,17 +66,7 @@ const gridCardData2 = [
  * @param {{ data: { id: string } }} props
  */
 const Section = ({ sectId, data }) => {
-    const GridDiv = ({ data_type }) => {
-        const cards = data_type === 1 ? gridCardData1 : gridCardData2;
-
-        return (
-            <div className="grid">
-                {cards.map((cardData, index) => (
-                    <GridCard key={index} imageIndex={index + 1} data={cardData} />
-                ))}
-            </div>
-        );
-    };
+    const cards = sectId === 1 ? gridCardData1 : sectId === 3 ? gridCardData2 : [];
 
     const Footer = () => (<></>);
 
@@ -79,9 +77,21 @@ const Section = ({ sectId, data }) => {
             </div>
             <div className={"pctext " + ((sectId === 1 || sectId === 3) ? "pctext-grid" : "")}>
                 {/* <p className="ptext">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> */}
-                {sectId === 1 && <GridDiv data_type={1} />}
+                {sectId === 1 && (
+                    <div className="grid">
+                        {cards.map((cardData, index) => (
+                            <GridCard key={index} imageIndex={index + 1} data={cardData} />
+                        ))}
+                    </div>
+                )}
                 {sectId === 2 && <ListDiv />}
-                {sectId === 3 && <GridDiv data_type={2} />}
+                {sectId === 3 && (
+                    <div className="grid">
+                        {cards.map((cardData, index) => (
+                            <GridCard key={index} imageIndex={index + 1} data={cardData} />
+                        ))}
+                    </div>
+                )}
                 {sectId === 4 && <Footer />}
             </div>
         </section>
@@ -89,4 +99,3 @@ const Section = ({ sectId, data }) => {
 };
 
 export default Section;
-
